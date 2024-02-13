@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Simbologias no CSS
+        #  = id
+        .  = class
+        :  = pseudo-class
+        :: = pseudo-element
+        >  = children
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, sans-serif;
+            font-size: 2em;
+        }
+        
+        a{
+            color:red
+        }
+
+        /*Linkis já visitados*/
+        a:visited{
+            color: darkred;
+        }
+
+        a:hover{
+            color: black;
+            text-decoration: underline;
+        }
+
+        /*Quando clica */
+        a:active{
+            color: yellowgreen;
+        }
+
+        /*Dois pontos são uma pseudo classe, ai add uma msg dps de todos links, que n foram adicionados no html pqp kkk*/
+        a::after{
+            content: '[link]';
+            color: black;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        /*Aqui referi a classe do htlm lin 50-51 e chamei ela pelo . no CSS*/
+        .especial::before{
+            content: '>>>';
+            background-color: rgb(255, 66, 66);
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizing Links</h1>
+    <ul>
+        <li><a href="https://github.com/" target="_blank">Github</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" class="especial">Channel on Youtube</a></li>
+        <li><a href="https://www.youtube.com/@BRKsEDU" target="_blank">BrksEdu</a></li>
+    </ul>
+</body>
+</html>

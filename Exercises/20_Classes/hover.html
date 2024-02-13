@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Example</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*Atribuindo uma classe a certa div no acso Se passar mouse em cima*/
+        div:hover{
+            color: red;
+        }
+
+        /*Atribuindo que o p é filho da div, só vai mexer no paragrafo dentro da div n oq esta fora, tipo um id msm*/
+        div > p{
+            display: none;
+        }
+
+        /*Atribuindo a função hover na div mãe e p filho, assim so vai mudar algo no p e n em outras coisas*/
+        div:hover > p{
+            display: block;
+            color: white;
+            background-color: red;
+            width: 230px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover Example</h1>
+    <p>Passe o mouse sobre o texto abaixo</p>
+    <div id="">
+        Pass your mouse here!
+        <p>Texto ESCONDIDO HEHE...</p>
+    </div>
+    <p>Fim do exemplo</p>
+</body>
+</html>

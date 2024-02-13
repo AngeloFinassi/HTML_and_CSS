@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Models</title>
+    <style>
+        h1{
+            /*Transforma o box-line e inline display: inline; */
+            background-color: lightgray;
+            height: 35px;
+            width: 368px;
+            /*border:widh style color in ordem*/
+            border: 10px solid darkolivegreen;
+            
+            /*Centraliza a margin e a caixa no meio, se for texto usa text align center e gg*/
+            /* margin: auto; */
+            margin: 10px auto 10px auto;
+
+            /*Fica Dentro da Margem mas pode estrapolar*/
+            outline-width: 10px;
+            outline-style: dashed;
+            outline-color: blue;
+            
+            /*Normally the order to editing the padding star
+                -top
+                -right
+                -bottom
+                -left
+                Like a clock
+            
+            padding:Topo direita baixo esquerda, ou se for tudo igual coloca só 10px e gg   */
+            /* padding:10px 10px 10px 10px */
+            padding: 10px;
+        }
+        a{
+            border-width: 10px;
+            border-style: groove;
+            border-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de caixa box level</h1>
+    <p>paragraph are box level to, but the <a href="#">Links are In-level exemples</a>. Let's go see how It's works?</p>
+</body>
+</html>

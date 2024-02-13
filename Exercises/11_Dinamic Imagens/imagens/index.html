@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamyc imagens</title>
+</head>
+<body>
+    <h1>Dynamics imagens</h1>
+    <p>Try change the size of the windowd for change the imagens bellow</p>
+    <!--1.picture 2.source media type 3.setar config-->
+    <!--Se o máximo source for passado carregfa a imagem no srcsetr-->
+    <!--Seguindo a ordem de oq quer aparecer sendo a primeira img e mudanças o source-->
+    <picture>
+        <source media="(max-width: 750px)" srcset="P.png" type="image/">
+        <source media="(max-width: 900px)" srcset="M.png" type="image/png">
+        <img src="GG.png" alt="">
+    </picture>
+</body>
+</html>

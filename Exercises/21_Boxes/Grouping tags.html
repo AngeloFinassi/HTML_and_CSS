@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+        }
+        header{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        nav{
+            background-color: lightgray;
+            padding: 5px;
+            box-shadow: 5px 3px 7px 1px rgba(0, 0, 0, 0.452);
+            
+        }
+        nav > a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        main{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            margin: auto;
+            width: 97%;
+        }
+        footer > p{
+            margin: 4px;
+        }
+        article{
+            background-color: lightgray;
+            margin: 15px;
+            padding: 25px;
+            box-shadow: 5px 3px 10px 1px;
+        }
+        h2{
+            text-decoration: underline;
+        }
+        a:hover{
+            color: rgba(255, 255, 0, 0.705);
+        }
+        div#bola{
+            display: none;
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!--São divs mas com semântica, + útil para navegadores-->
+    <header>
+        <h1>Paladainha do Sul</h1>
+        <!--Navegação-->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Pag01</a>
+            <a href="#">Pag02</a>
+        </nav>
+    </header>
+    <main>
+        <section id="news">
+            <article>
+                <h2>News About Brazil</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem ab adipisci quas rem sunt pariatur consequatur recusandae perspiciatis dolorem voluptate, dolore earum eaque aspernatur vero eligendi soluta incidunt eum. Deleniti.</p>
+                <!--Conteudo perifético-->
+            </article>
+            <article>
+                <section id="assuntos">
+                    <h2>German History</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ad possimus, asperiores non animi omnis laborum reiciendis voluptates illo ipsam inventore eligendi! Quis molestias, tenetur neque doloremque nostrum voluptate enim?</p>
+            </section>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Developmen by Angelo MF</p>
+    </footer>
+    <div id="bola"></div>
+</body>
+</html>

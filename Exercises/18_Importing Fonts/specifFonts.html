@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Fonts</title>
+    <style>
+        /*To Import Fonts It's necessary dowlaod de archive Fonts andgive" src: url('the name.otf')  ,if wou want add more just continue with more src and format*/
+        @font-face {
+            font-family: 'Callista';
+            src: url('Callista.otf') format('opentype'), url('Callista.ttf') format(truetype);
+        }
+        body{
+            font-family: 'Callista';
+            font-weight: normal;
+            font-style: normal;
+            /*Tips of format()
+            -opentype(otf)
+            -truetype (ttf)
+            -embedded-oppentype
+            -truetype-aat (Apple advanced Typografy)
+            -svg
+            */
+            font-size: 2em;
+        }
+        h1{
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum excepturi facilis, repudiandae praesentium nulla, provident omnis nesciunt minus nostrum necessitatibus! In soluta accusantium corporis et beatae repudiandae neque debitis.</p>
+</body>
+</html>
