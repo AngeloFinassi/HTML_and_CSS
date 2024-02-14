@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Passion One */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+
+/* Sriracha */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+:root{
+    --font1: Verdana, Tahoma, sans-serif;
+    --font2: 'Passion One', sans-serif;
+    --font3: 'Sriracha', sans-serif;
+
+    --color1: #ECBF36; 
+    --color2: #e2aa03c2;
+    --color3: #A08645;
+    --color4: #695519;
+    --color5: #4B4639;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    min-height: 100vh;
+    background-color: rgb(238, 236, 236);
+    font-family: var(--font1);
+}
+
+header{
+    background-color: var(--color5);
+    color: white;
+    text-align: center;
+    margin: auto;
+    box-shadow: 2px 3px 7px 3px rgba(0, 0, 0, 0.5);
+    
+}
+
+header > h1{
+    padding-top: 50px;
+    font-family: var(--font2);
+    font-variant: small-caps;
+    font-size: 6vw;
+    padding-bottom: 10px;
+}
+
+header > p > a{
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+header > p{
+    font-weight: lighter;
+    font-size: 1em;
+    padding-bottom: 50px;
+}
+
+section{
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5vw;
+    font-family: var(--font3);
+    line-height: 2em;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 20px;
+}
+
+section.normal{
+    background-image: linear-gradient(to left, var(--color3), var(--color2));
+    color: rgb(56, 56, 56);
+}
+
+section.image{
+    color: white;
+    box-shadow: inset 0px 1px 7px 2px rgba(0, 0, 0, 0.479);
+}
+
+section.image#img01{
+    background: rgb(58, 58, 58) url(cordel_folder/imagens/background002.jpg) left top no-repeat fixed;
+    background-size: cover;
+}
+section.image#img02{
+    background: rgb(58, 58, 58) url(cordel_folder/imagens/background001.jpg) left top no-repeat fixed;
+    background-size: cover;
+}
+
+section.image > p{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.288);
+    padding: 5px;
+}
+
+section > p{
+    padding-bottom: 2em;
+}
+
+footer{
+    background-color: var(--color5);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: var(--font2);
+    font-size: 2vw;
+}
