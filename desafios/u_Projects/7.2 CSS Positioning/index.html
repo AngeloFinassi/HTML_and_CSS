@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Positioning Exercise</title>
+  <style>
+    .red-circle{
+      /* this make the circle ignore the boxes, become absolute object in the site */
+      position: absolute;
+      background-color: red;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 150px;
+      margin-left: 250px;
+      z-index: 0;
+
+    }
+    .blue-box{
+      position: relative;
+      background-color: blue;
+      height: 300px;
+      width: 500px;
+      margin-top: 200px;
+      margin-left: 200px;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blue-box">
+    <div class="red-circle">
+    </div>
+  </div>
+
+</body>
+
+</html>
