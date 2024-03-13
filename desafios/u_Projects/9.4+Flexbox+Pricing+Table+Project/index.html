@@ -13,8 +13,10 @@
         font-family: "Sono", sans-serif;
       }
 
-      ul{
+      ul {
         list-style-type: none;
+        font-size: 0.75em;
+        text-align: justify;
       }
 
       .pricing-container {
@@ -25,26 +27,53 @@
         gap: 30px;
         
         text-align: center;
+        text-indent: 30p;
+        margin-left: 20px;
+        margin-right: 20px;
       }
 
       .pricing-plan {
+        flex: 1;
         background-color: #f2f2f2;
         border-radius: 5px;
+        max-width: 300px;
+        height: 250px;
+
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.506);
       }
 
-      .plan-title{
+      .plan-title {
         font-weight: bolder;
         font-size: 1em;
       }
 
-      .plan-price{
+      .plan-price {
         font-weight: bolder;
         font-size: 2em;
       }
 
+      .plan-button {
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #ff6601;
+        padding: 10px;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.517);
+
+      }
+
       /* Hint: What can you do with a media query and flexbox? */
       @media (max-width: 1250px) {
+        .pricing-container {
+        flex-direction: column;
+        height: 100%;
       }
+
+      .pricing-plan {
+        min-width: 300px;
+        min-height: 250px;
+      }
+    }
     </style>
   </head>
 
@@ -64,7 +93,7 @@
 
       <div class="pricing-plan">
         <div class="plan-title"><p>Standard</p></div>
-        <div class="plan-price">$19.99/month</div>
+        <div class="plan-price"><p>$19.99/month</p></div>
         <ul class="plan-features">
           <li>✅ 50GB Storage</li>
           <li>✅ 5 Users</li>
