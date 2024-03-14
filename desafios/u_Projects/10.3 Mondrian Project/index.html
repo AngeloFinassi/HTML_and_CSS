@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* sempre dividir em cima do min, para sobrar espaços que possams er devoradso, se faltar algum da BO
+    .Ass cara que ficou 2 hrs e n deu certo */
+    body {
+      display: flex;
+      height: 100vh;
+
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(200, 199, 199);
+    }
+
+    .container {
+      height: 748px;
+      width: 748px;
+      display: grid;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 22px;
+      gap: 9px;
+
+      background-color: #000;
+    }
+
+    .rt {
+      background-color: #F0F1EC;
+    }
+    
+    .red{
+      background-color: #E72F24;
+      
+    }
+
+    div#grey1 {
+      grid-column: span 3;
+    }
+
+    div#grey2 {
+      grid-row: span 2;
+    }
+
+    div#grey3 {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
+    div#grey4 {
+      grid-row: span 2;
+    }
+
+    .blue {
+      background-color: #004592;
+    }
+
+    .yellow {
+      background-color: #F9D01E;
+    }
+
+    .black {
+      background-color: #232629;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="rt red"></div>
+    <div class="rt grey" id="grey1"></div>
+    <div class="rt grey" id="grey2"></div>
+    <div class="rt grey" id="grey3"></div>
+    <div class="rt blue"></div>
+    <div class="rt grey" id="grey4"></div>
+    <div class="rt grey" id="grey5"></div>
+    <div class="rt yellow"></div>
+    <div class="rt black"></div>
+  </div>
+</body>
+
+</html>

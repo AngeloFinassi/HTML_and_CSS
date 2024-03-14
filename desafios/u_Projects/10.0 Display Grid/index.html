@@ -4,9 +4,30 @@
 <head>
   <title>Chessboard</title>
   <style>
-    /* Write your code here */
-    /* Each square should be 100px by 100px */
-    /* My colours for white: #f0d9b5, black: #b58863 */
+    .container {
+      display: grid;
+      /* 8 colunas com a msm proporção */
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      /* 8 linhas com a msm proporção */
+      grid-row: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+      /* Grid tenta ajustar ao tamanho total da tela, assim temos que definir um valor, evitando que ele se estique  e "saia" do tabuleiro */
+      width: 800px;
+      height: 800px;
+    }
+
+    .white, .black {
+      width: 100px;
+      height: 100px;
+    }
+
+    .white {
+      background-color: #f0d9b5;
+    }
+
+    .black {
+      background-color: #b58863;
+    }
   </style>
 </head>
 
