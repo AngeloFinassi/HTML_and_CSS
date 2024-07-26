@@ -1,6 +1,4 @@
 # HTML_and_CSS
- Learning HTML snd CSS, to the begginer
+Aprendendo HTML e CSS, repositório com exercícios e temas separados.
 
- I'm learning to create site, and now I can manage my repository.
- 
- <a hef=" https://angelofinassi.github.io/HTML_and_CSS/desafios/">Abrir teste Android</a>
+
