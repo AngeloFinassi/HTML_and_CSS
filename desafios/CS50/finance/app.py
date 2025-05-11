@@ -1,8 +1,12 @@
 import os
 
+from attr import has
+from click import confirm, confirmation_option
 from cs50 import SQL
+from django.shortcuts import render
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
+from numpy import shares_memory
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
@@ -21,6 +25,11 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.jinja_env.auto_reload = True
 
 @app.after_request
 def after_request(response):
@@ -42,7 +51,41 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    symbol = request.form.get("symbol")
+    shares = request.form.get("shares")
+
+    if request.method == "POST":
+        #request filter
+        if not symbol:
+            return apology("Please insert a Symbol", 403)
+        if not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Please insert a Number on Shares", 403)
+        
+        #price request
+        quote = lookup(symbol)
+        if not quote:
+            return apology("invalid Symbol", 403)
+        
+        shares = int(shares)
+        price = quote["price"] 
+        total = price * shares
+
+        #is it possible buy
+        user_id = session["user_id"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        if total > cash:
+            apology("Not enought money", 403)
+
+        type = 'buy'
+        #update the users'cash and the buy on another table
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", price, user_id)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, type) VALUES (?, ?, ?, ?, ?)", user_id, symbol, shares, total, type)
+
+        transaction = db.execute("SELECT * FROM transactions")
+        print(transaction)
+        return redirect("bought.html", )
+    
+    return render_template("buy.html")
 
 
 @app.route("/history")
@@ -106,13 +149,54 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        quote_stocks = lookup(symbol)
+
+        if not symbol:
+            return apology("Please inserte a Value", 403)
+        if quote_stocks is None:
+            return apology("Please insert a valid Symbol", 403)
+
+        return render_template("quoted.html", stocks=quote_stocks)
+
+    return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    return apology("TODO")
+    if request.method == "POST":
+        #Register Sistem
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+
+        if not username:
+            return apology("must provide username", 403)
+        elif not password:
+            return apology("must provide password", 403)
+        elif not confirmation:
+            return apology("Please Confirm you password", 403)
+        elif password != confirmation:
+            return apology("Password don't combine", 403)
+        
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        if len(rows) > 0:
+            return apology("username already taken", 403)
+        
+        #If it's a valid register
+        hash = generate_password_hash(password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+
+        #veriffy id and add on cookies
+        user_id = db.execute("SELECT id FROM users WHERE username = ?", username)[0]["id"]
+        session["user_id"] = user_id
+        flash("Registered successfully!")
+        return redirect("/")
+
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
