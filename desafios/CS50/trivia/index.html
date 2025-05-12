@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Is Brazil a?</h3>
+                <button class="q_wrong">Continet</button>
+                <button class="q_correct">Country</button>
+                <button class="q_wrong">Argentina</button>
+                <p id="feedback-mc"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What it's the biggest contry in the word?</h3>
+                <input id="answer_fr" type="text">
+                <button id="Ans_send">Check Answer</button>
+                <p id="feedback-fr"></p>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>
